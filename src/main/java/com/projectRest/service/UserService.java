@@ -1,12 +1,15 @@
 package com.projectRest.service;
 
 import com.projectRest.model.User;
+import jakarta.persistence.Id;
 
-import java.util.Optional;
+import java.util.List;
 
-public interface UserService {
+public interface UserService{
+    List<User> findAll();
+    User getUserById(Long id);
+    User saveUser(User user);
+    User updateUser(Long id,User user);
+    User deleteUser(Long id);
 
-    Optional<User> findById(int id);
-
-    User createUser(User userToCreate);
 }
